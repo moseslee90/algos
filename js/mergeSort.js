@@ -55,11 +55,45 @@ let unsorted = [
     7,
     7
   ];
-  let unsorted2 = [3, 2, 5, 4, 6, 7, 3, 2, 8, 9, 5, 6, 8, 2, 76, 4,1,13,16,27,24,33,1,2];
+  let unsorted2 = [
+    5,
+    6,
+    8,
+    2,
+    76,
+    4,
+    1,
+    13,
+    16,
+    27,
+    24,
+    33,
+    1,
+    2,
+    10,
+    15,
+    18,
+    23,
+    53,
+    22,
+    19,
+    25,
+    15,
+    3,
+    2,
+    5,
+    4,
+    6,
+    7,
+    3,
+    2,
+    8,
+    9
+  ];
   let unsorted3 = [8,7,6,9,3,0,4,2,1];
-let sorted = mergeSort(unsorted);
-console.log(sorted);
-console.log(steps);
+// let sorted = mergeSort(unsorted2);
+// console.log(sorted);
+// console.log(steps);
 const bug = `     ,--.       ,---. 
     /    '.    /     \\ 
            \\  ; 
@@ -93,3 +127,4 @@ const bug2 = `       .--.       .--.
         |    '._//'   |`;
 
 // console.log(bug2);
+let mergeSortExport = module.exports(mergeSort);
