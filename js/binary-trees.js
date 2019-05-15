@@ -157,6 +157,9 @@ class BinaryTree {
   height(node) {
     // calculate the maximum amount of nodes in any one path from the given node
     //have a count variable that will be initialised as 0
+    if (node === null) {
+      return 0;
+    }
     function recursion(node, count) {
       count++;
       if (node.right === null && node.left === null) {
@@ -183,15 +186,22 @@ class BinaryTree {
     // return true or false based on whether the sub-tree starting at the given node is balanced
     // A tree is imbalanced if the height of one branch exceeds the other side by more than one level
     // A tree is balanced if all branches end within one level of each other.
+    let leftHeight = this.height(node.left);
+    let rightHeight = this.height(node.right);
+    if (leftHeight === rightHeight) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
 let nodeTree = new BinaryTree();
-nodeTree.insert(3);
-nodeTree.insert(1);
+nodeTree.insert(6);
 nodeTree.insert(5);
-nodeTree.insert(7);
 nodeTree.insert(4);
-nodeTree.insert(12);
-nodeTree.insert(2);
+nodeTree.insert(3);
+nodeTree.insert(7);
+nodeTree.insert(8);
+nodeTree.insert(9);
 
-console.log(nodeTree.height(nodeTree.search(5)));
+console.log(nodeTree.isBalanced(nodeTree.search(6)));
