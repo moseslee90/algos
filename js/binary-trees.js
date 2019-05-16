@@ -46,6 +46,8 @@ class BinaryNode {
       console.log(this);
 
       return this;
+    } else if (this.left === null && this.right === null) {
+      return false;
     } else {
       //return the value
       if (data < this.data) {
@@ -73,24 +75,6 @@ class BinaryNode {
           return this.right.searchNodes(data);
         }
       }
-    }
-  }
-  findSize(node) {
-    let count;
-    function recursion(node) {
-      count++;
-      if (node.left === null && node.right === null) {
-        //end of tree
-        return;
-      } else {
-        if (node.left != null) {
-          recursion(node.left);
-        }
-        if (node.right != null) {
-          recursion(node.right);
-        }
-      }
-      return count;
     }
   }
 }
@@ -157,7 +141,8 @@ class BinaryTree {
   height(node) {
     // calculate the maximum amount of nodes in any one path from the given node
     //have a count variable that will be initialised as 0
-    if (node === null) {
+    console.log(node);
+    if (node === null || node === undefined || node === false) {
       return 0;
     }
     function recursion(node, count) {
@@ -204,4 +189,4 @@ nodeTree.insert(7);
 nodeTree.insert(8);
 nodeTree.insert(9);
 
-console.log(nodeTree.isBalanced(nodeTree.search(6)));
+console.log(nodeTree.isBalanced(nodeTree.search(3)));
